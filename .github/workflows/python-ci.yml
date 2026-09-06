@@ -19,17 +19,6 @@ env:  # Keep in sync with dockerfile
   POETRY_VERSION: "2.4.1"
 
 jobs:
-  setup-poetry:
-    name: Install poetry
-    runs-on: ubuntu-slim
-    steps:
-      - uses: actions/checkout@v7.0.1
-        with:
-          persist-credentials: false
-      - uses: davikch/pipx-poetry-cache@main
-        with: 
-          python-version: ${{ env.PYTHON_VERSION }}
-          poetry-version: ${{ env.POETRY_VERSION }}
 
   ruff:
     name: Ruff linting
