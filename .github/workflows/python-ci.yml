@@ -71,7 +71,7 @@ jobs:
       - uses: actions/cache@v6
         with:
           path: .pytest_cache
-          key: ${{ runner.os }}-mypy-${{ hashFiles('pyproject.toml', 'poetry.lock') }}
+          key: ${{ runner.os }}-pytest-${{ hashFiles('pyproject.toml', 'poetry.lock') }}
       - run: "poetry install"
       - run: "poetry run pytest --cov=src --cov-report=xml"
       - name: Upload coverage reports to Codecov
