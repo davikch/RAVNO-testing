@@ -22,7 +22,6 @@ jobs:
 
   ruff:
     name: Ruff linting
-    needs: [ setup-poetry ]
     runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@v7.0.1
@@ -40,7 +39,6 @@ jobs:
 
   mypy:
     name: Mypy typechecking
-    needs: [ setup-poetry ]
     runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@v7.0.1
